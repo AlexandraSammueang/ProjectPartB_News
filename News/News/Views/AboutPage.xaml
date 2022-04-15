@@ -4,9 +4,9 @@
              x:Class="News.Views.AboutPage"
              Title="About News">
 
-    <StackLayout>
-        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-            <Label Text="Project Part B" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+    <StackLayout BackgroundColor="LightBlue">
+        <Frame BackgroundColor="#FFB6C1" Padding="24" CornerRadius="0">
+            <Label Text="Welcome to my News Page!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
         </Frame>
         <Label Text="News in Xamarin.Forms" FontSize="Title" Padding="30,10,30,10"/>
         <Label Text="This part of the project is about making a simple UI in to the console news service made in project part A using Tabs." 
@@ -17,7 +17,7 @@
             <Label.FormattedText>
                 <FormattedString>
                     <FormattedString.Spans>
-                        <Span Text="Martin Lenart"/>
+                        <Span Text="Alexandra Salén Sammueang"/>
                     </FormattedString.Spans>
                 </FormattedString>
             </Label.FormattedText>
