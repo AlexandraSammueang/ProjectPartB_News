@@ -34,37 +34,30 @@ namespace News.Views
         {
             base.OnAppearing();
 
-            //Code here will run right before the screen appears
-            //You want to set the Title or set the City
-
-            //This is making the first load of data
 
             MainThread.BeginInvokeOnMainThread(async () =>
             {
                 try
                 {
-
+                    
                     await LoadNews();
+                    CategoryName.Text = $"News headlines for {Title} available";
 
                 }
 
                 catch (Exception)
                 {
-                    await DisplayAlert("Page crashed", "No internet connection", "try again");
+                    await DisplayAlert("Page crashed", "No connection", "Try again");
                 }
 
 
-
-
             });
-            //MainThread.BeginInvokeOnMainThread(async () => { await LoadNews(); });
-
+           
 
         }
         private async Task LoadNews()
         {
-            //Heare you load the forecast 
-            //NewsGroup t1 = await service.GetNewsAsync(Title);
+            
             NewsCategory nCat = (NewsCategory)Enum.Parse(typeof(NewsCategory), Title);
             await Task.Run(() =>
             {
@@ -77,18 +70,15 @@ namespace News.Views
             });
 
 
-
-
-
         }
 
-        private async void refresh(object sender, EventArgs args)
+        private async void RefreshPage(object sender, EventArgs args)
         {
             await LoadNews();
         }
 
 
-        private async void NewsListView_ItemTapped(object sender, ItemTappedEventArgs e)
+        private async void NewsListView_ItemTapped(object sender, ItemTappedEventArgs e) //Get all the news
         {
             var newsPage = (NewsItem)e.Item;
             await Navigation.PushAsync(new ArticleView(newsPage.Url));

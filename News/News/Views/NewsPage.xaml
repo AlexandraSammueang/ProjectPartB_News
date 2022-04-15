@@ -6,7 +6,7 @@
     <ContentPage.Content>
         <StackLayout BackgroundColor="#FFB6C1">
             <Button Text="Refresh"
-                    Clicked="refresh"/>
+                    Clicked="RefreshPage"/>
 
             <Button Text="Connection" Clicked="Connection_Clicked"></Button>
             <Label x:Name="runningStatusLabel"
@@ -15,7 +15,9 @@
 
             <ActivityIndicator x:Name="SlowConnection"
                                Color="#FFF"></ActivityIndicator>
-
+            
+                <Label x:Name="CategoryName" TextColor="White" FontSize="Header" TextDecorations="Underline" Scale="0.5" > </Label>
+            
 
             <ListView x:Name= "NewsListView"
                ItemTapped="NewsListView_ItemTapped" IsGroupingEnabled="False">
@@ -48,9 +50,6 @@
                                 </Grid>
 
                             </Frame>
-
-
-
 
                         </ViewCell>
                     </DataTemplate>
